@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import App from './App'
 
-const AppProvider = () => {
+const AppProvider: React.FC = () => {
   return (
     <NavigationContainer>
       <PaperProvider>
