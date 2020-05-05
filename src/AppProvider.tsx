@@ -7,11 +7,11 @@ import AppNavigator from './AppNavigator'
 
 const AppProvider: React.FC = () => {
   return (
-    <NavigationContainer>
-      <PaperProvider>
+    <PaperProvider>
+      <NavigationContainer>
         <AppNavigator />
-      </PaperProvider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </PaperProvider>
   )
 }
 

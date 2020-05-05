@@ -1,7 +1,8 @@
-import React, { ReactChildren } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 
 interface Props {
+  mg?: number
   ml?: number
   mr?: number
   mt?: number
@@ -10,7 +11,7 @@ interface Props {
   pr?: number
   pb?: number
   pt?: number
-  children: ReactChildren
+  children: React.ReactNode
 }
 
 const Box: React.FC<Props> = ({
