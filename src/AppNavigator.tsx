@@ -1,9 +1,23 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import { Home } from 'screens'
+import { Home, NewTask } from 'screens'
 
 const Stack = createStackNavigator()
+const Drawer = createDrawerNavigator()
+
+const MyDrawer: React.FC = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen
+        name="NewTask"
+        component={NewTask}
+        options={{ drawerLabel: 'NewTask' }}
+      />
+    </Drawer.Navigator>
+  )
+}
 
 const AppNavigator: React.FC = () => {
   return (
@@ -13,6 +27,7 @@ const AppNavigator: React.FC = () => {
         component={Home}
         options={{ title: 'My home' }}
       />
+      <Stack.Screen name="MyDrawer" component={MyDrawer} />
     </Stack.Navigator>
   )
 }
