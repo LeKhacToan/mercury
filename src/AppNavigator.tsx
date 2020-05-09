@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import { Text } from 'react-native'
 
 import { Home, NewTask } from 'screens'
 
@@ -9,7 +10,7 @@ const Drawer = createDrawerNavigator()
 
 const MyDrawer: React.FC = () => {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={() => <Text>sdsdsdsds</Text>}>
       <Drawer.Screen
         name="NewTask"
         component={NewTask}
