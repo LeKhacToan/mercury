@@ -28,6 +28,11 @@ const AppNavigator: React.FC = () => {
         component={Home}
         options={{ title: 'My home' }}
       />
+      <Stack.Screen
+        name="NewTask"
+        component={NewTask}
+        options={{ title: 'NewTask' }}
+      />
       <Stack.Screen name="MyDrawer" component={MyDrawer} />
     </Stack.Navigator>
   )
