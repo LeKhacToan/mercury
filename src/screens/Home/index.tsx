@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { ScrollView, StyleSheet, StatusBar } from 'react-native'
-import { Headline } from 'react-native-paper'
+import { Headline, Button } from 'react-native-paper'
 import SafeAreaView from 'react-native-safe-area-view'
+import { useNavigation } from '@react-navigation/native'
 
 import { TaskCard, Box } from 'components'
 
@@ -25,6 +26,14 @@ const styles = StyleSheet.create({
 })
 
 const Home: React.FC = () => {
+  const { setOptions } = useNavigation()
+
+  useLayoutEffect(() => {
+    setOptions({
+      headerRight: () => <Button>sdsdsdsd</Button>,
+    })
+  }, [setOptions])
+
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" backgroundColor={color.WHITE} />
