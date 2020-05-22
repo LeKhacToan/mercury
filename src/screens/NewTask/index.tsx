@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 })
+
 const NewTask: React.FC = () => {
   return (
     <SafeAreaView>
