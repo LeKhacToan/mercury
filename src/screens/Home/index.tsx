@@ -1,10 +1,13 @@
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, StatusBar } from 'react-native'
 import { Headline } from 'react-native-paper'
+import SafeAreaView from 'react-native-safe-area-view'
 
 import { TaskCard, Box } from 'components'
 
 import { Task } from 'typings'
+
+import { color } from 'utils/constants'
 
 const task: Task = {
   title:
@@ -23,23 +26,26 @@ const styles = StyleSheet.create({
 
 const Home: React.FC = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <Box ml={8} mr={8} mt={12}>
-        <Headline style={styles.heading}>Công việc</Headline>
-      </Box>
-      <Box ml={8} mr={8} mt={8}>
-        <TaskCard task={task} />
-      </Box>
-      <Box ml={8} mr={8} mt={8}>
-        <TaskCard task={task} />
-      </Box>
-      <Box ml={8} mr={8} mt={8}>
-        <TaskCard task={task} />
-      </Box>
-      <Box ml={8} mr={8} mt={8}>
-        <TaskCard task={task} />
-      </Box>
-    </ScrollView>
+    <SafeAreaView>
+      <StatusBar barStyle="dark-content" backgroundColor={color.WHITE} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Box ml={8} mr={8} mt={12}>
+          <Headline style={styles.heading}>Công việc</Headline>
+        </Box>
+        <Box ml={8} mr={8} mt={8}>
+          <TaskCard task={task} />
+        </Box>
+        <Box ml={8} mr={8} mt={8}>
+          <TaskCard task={task} />
+        </Box>
+        <Box ml={8} mr={8} mt={8}>
+          <TaskCard task={task} />
+        </Box>
+        <Box ml={8} mr={8} mt={8}>
+          <TaskCard task={task} />
+        </Box>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 
