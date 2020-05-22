@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react'
 import { ScrollView, StyleSheet, StatusBar } from 'react-native'
-import { Headline, Button } from 'react-native-paper'
+import { Headline, Searchbar, IconButton } from 'react-native-paper'
 import SafeAreaView from 'react-native-safe-area-view'
 import { useNavigation } from '@react-navigation/native'
 
@@ -14,7 +14,7 @@ const task: Task = {
   title:
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ScrollView',
   content:
-    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum is simply dummy text of the print and typesetting industry.',
   createdAt: '12/12/1998',
   dueDate: '12/12/1998',
 }
@@ -30,7 +30,14 @@ const Home: React.FC = () => {
 
   useLayoutEffect(() => {
     setOptions({
-      headerRight: () => <Button>sdsdsdsd</Button>,
+      headerRight: () => (
+        <IconButton
+          icon="magnify"
+          size={32}
+          color={color.GRAY}
+          onPress={() => {}}
+        />
+      ),
     })
   }, [setOptions])
 
@@ -38,19 +45,19 @@ const Home: React.FC = () => {
     <SafeAreaView>
       <StatusBar barStyle="dark-content" backgroundColor={color.WHITE} />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Box ml={8} mr={8} mt={12}>
+        <Box ml={12} mr={12} mt={12}>
           <Headline style={styles.heading}>Công việc</Headline>
         </Box>
-        <Box ml={8} mr={8} mt={8}>
+        <Box ml={12} mr={12} mt={12}>
           <TaskCard task={task} />
         </Box>
-        <Box ml={8} mr={8} mt={8}>
+        <Box ml={12} mr={12} mt={12}>
           <TaskCard task={task} />
         </Box>
-        <Box ml={8} mr={8} mt={8}>
+        <Box ml={12} mr={12} mt={12}>
           <TaskCard task={task} />
         </Box>
-        <Box ml={8} mr={8} mt={8}>
+        <Box ml={12} mr={12} mt={12}>
           <TaskCard task={task} />
         </Box>
       </ScrollView>

@@ -31,7 +31,7 @@ const AppNavigator: React.FC = () => {
       <Stack.Screen
         name="NewTask"
         component={NewTask}
-        options={{ title: 'NewTask' }}
+        options={{ title: 'Thêm công việc mới' }}
       />
       <Stack.Screen name="MyDrawer" component={MyDrawer} />
     </Stack.Navigator>

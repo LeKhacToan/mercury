@@ -11,7 +11,7 @@ interface Props {
   pr?: number
   pb?: number
   pt?: number
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Box: React.FC<Props> = ({

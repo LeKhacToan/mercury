@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
 import { Button, Card, Paragraph } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 
@@ -8,10 +9,16 @@ interface Props {
   task: Task
 }
 
+const styles = StyleSheet.create({
+  card: {
+    paddingRight: 4,
+  },
+})
+
 const TaskCard: React.FC<Props> = ({ task }: Props) => {
   const { navigate } = useNavigation()
   return (
-    <Card onPress={() => navigate('NewTask')}>
+    <Card style={styles.card} onPress={() => navigate('NewTask')}>
       <Card.Title title={task.title} subtitle={task.createdAt} />
       <Card.Content>
         <Paragraph>{task.content}</Paragraph>
